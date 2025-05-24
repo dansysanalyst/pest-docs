@@ -57,7 +57,7 @@ the `--include` option:
 
 ## Exclude Words
 
-There may be times when you want to exclude certain from being flagged up as profane. To do this, you can use the 
+There may be times when you want to exclude certain words from being flagged up as profane. To do this, you can use the 
 `--exclude` option:
 
 ```bash
