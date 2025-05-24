@@ -61,7 +61,7 @@ There may be times when you want to exclude certain from being flagged up as pro
 `--exclude` option:
 
 ```bash
-./vendor/bin/pest --profanity --exclude=exclude
+./vendor/bin/pest --profanity --exclude=elephpant
 ```
 
 ## Compact Output
