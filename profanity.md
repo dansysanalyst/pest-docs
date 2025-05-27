@@ -28,7 +28,7 @@ After requiring the plugin, you may utilize the `--profanity` option to generate
 Profanity does not require you to write any tests. Instead, it analyses your codebase and generates a report of your 
 profanity. This report will display a list of files and their corresponding profanity results.
 
-<img src="/assets/img/type-coverage.png" style="width: 100%;" />
+<img src="/assets/img/profanity.png" style="width: 100%;" />
 
 If any of your files contain profanity, they will be highlighted in red and displayed using their respective line
 numbers and the profane word(s) that have been found.
