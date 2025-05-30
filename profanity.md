@@ -81,6 +81,15 @@ In addition, Pest supports reporting the profanity results to a specific file:
 ./vendor/bin/pest --profanity --output=my-report.json
 ```
 
+## Exclude Lines
+
+If you wish to exclude certain lines that contain profanity from being flagged, without excluding words from the
+whole application, you can tell the checker to ignore certain lines:
+
+```php
+const string Fuck; //@pest-ignore-profanity
+```
+
 ---
 
 In this chapter, we have discussed Pest's Profanity plugin and how it can be used to help you maintain a professional 
