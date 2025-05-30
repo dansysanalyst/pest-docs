@@ -87,7 +87,7 @@ If you wish to exclude certain lines that contain profanity from being flagged, 
 whole application, you can tell the checker to ignore certain lines:
 
 ```php
-const string Fuck; //@pest-ignore-profanity
+const string Fuck; // @pest-ignore-profanity
 ```
 
 ---
