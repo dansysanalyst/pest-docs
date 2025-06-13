@@ -37,14 +37,21 @@ As an example, `pr31(fuck)` means that the word "fuck" was found on line 31.
 
 ## Specific Language
 
-Often, a codebase is a single language, so you would only want to flag profanity for the language of the codebase. To 
+Often, a codebase is a single language, so you would only want to flag profanity for the language of the codebase. To
 do this, you can use the `--language` option:
 
 ```bash
 ./vendor/bin/pest --profanity --language=en
 ```
 
-The example above would only find English profanity. We currently support: `ar`, `da`, `en`, `it`, `nl` and `pt_BR`.
+If needed, you can pass in multiple comma separated languages too:
+
+```bash
+./vendor/bin/pest --profanity --language=en,da
+```
+
+We currently support: `ar`, `da`, `en`, `es`, `it`, `ja`, `nl` and `pt_BR`. If no language is specified,
+we use `en` as the default.
 
 ## Include Words
 
