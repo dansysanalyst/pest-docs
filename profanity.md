@@ -50,7 +50,7 @@ If needed, you can pass in multiple comma separated languages too:
 ./vendor/bin/pest --profanity --language=en,da
 ```
 
-We currently support: `ar`, `da`, `en`, `es`, `it`, `ja`, `nl` and `pt_BR`. If no language is specified,
+We currently support: `ar`, `da`, `en`, `es`, `it`, `ja`, `nl`, `pt_BR` and `ru`. If no language is specified,
 we use `en` as the default.
 
 ## Include Words
