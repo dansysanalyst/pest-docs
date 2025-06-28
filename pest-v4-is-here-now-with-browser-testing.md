@@ -7,7 +7,7 @@ description: Today, we’re thrilled to announce Pest v4 — our biggest release
 
 > Note: This is a placeholder announcement for early testers only. Pest v4 is not yet publicly released. Details may change before the final launch. Please do not share this publicly.
 
-Today, we’re thrilled to announce the release of **Pest v4**, bringing the biggest testing upgrade yet: powerful **[Browser Testing](/docs/browser-testing]. Pest’s new browser testing features let you run elegant, maintainable browser tests — with first-class support for Laravel’s testing API and the ability to run tests in parallel. For the first time, this is browser testing that feels as good as writing unit tests.
+Today, we’re thrilled to announce the release of **Pest v4**, bringing the biggest testing upgrade yet: powerful **[Browser Testing](/docs/browser-testing]**. Pest’s new browser testing features let you run elegant, maintainable browser tests — with first-class support for Laravel’s testing API and the ability to run tests in parallel. For the first time, this is browser testing that feels as good as writing unit tests.
 
 Here is an example using [Laravel](https://laravel.com):
 
