@@ -3,9 +3,11 @@ title: Pest v4 Is Here — Now with Browser Testing
 description: Today, we’re thrilled to announce Pest v4 — our biggest release yet, featuring powerful new browser testing with parallel support and full Laravel integration.
 ---
 
-# Pest v4 Is Here — Now with Browser Testing
-
 > Note: This is a placeholder announcement for early testers only. Pest v4 is not yet publicly released. Details may change before the final launch. Please do not share this publicly.
+> To get started with Pest v4's new features including browser testing, please refer to the upgrade guide: [Upgrade Guide →](/docs/upgrade-guide).
+
+
+# Pest v4 Is Here — Now with Browser Testing
 
 Today, we’re thrilled to announce the release of **Pest v4**, bringing the biggest testing upgrade yet: powerful **[Browser Testing](/docs/browser-testing]**. Pest’s new browser testing features let you run elegant, maintainable browser tests — with first-class support for Laravel’s testing API and the ability to run tests in parallel. For the first time, this is browser testing that feels as good as writing unit tests.
 
