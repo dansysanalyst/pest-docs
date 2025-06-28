@@ -35,15 +35,15 @@ it('may reset the password', function () {
 ```
 
 With Pest v4’s browser testing, you can:
-•	Test on **multiple browsers** (Chrome, Firefox, Safari)
-•	Test on **different devices** and viewports (like iPhone 14 Pro, tablets, or custom breakpoints)
-•	Switch **color schemes** (light/dark mode)
-•	Interact with the page (click, type, scroll, select, submit)
-•	Run **parallel browser tests** for dramatically faster suites
-•	Seamlessly use **Laravel features** like `Event::fake()`, `assertAuthenticated()`, and model factories
-•	Take **screenshots** or pause tests for debugging
-•	…all with the elegance of Pest syntax
-•	**Playwright-based** — modern, fast, and reliable
+- Test on **multiple browsers** (Chrome, Firefox, Safari)
+- Test on **different devices** and viewports (like iPhone 14 Pro, tablets, or custom breakpoints)
+- Switch **color schemes** (light/dark mode)
+- Interact with the page (click, type, scroll, select, submit)
+- Run **parallel browser tests** for dramatically faster suites
+- Seamlessly use **Laravel features** like `Event::fake()`, `assertAuthenticated()`, and model factories
+- Take **screenshots** or pause tests for debugging
+- …all with the elegance of Pest syntax
+- **Playwright-based** — modern, fast, and reliable
 
 To get started with browser testing in Pest, you need to install the Pest Browser Plugin:
 
