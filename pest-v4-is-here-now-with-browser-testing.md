@@ -127,4 +127,5 @@ Thank you for your continued support and feedback. We can't wait to see what you
 
 ---
 
-Thank you for reading about Pest v4's new features! If you're considering a testing framework for your next project, here's why you should give Pest a try: [Why Pest →](/docs/why-pest)
+Thank you for reading about Pest v4's new features! Want to get started with Pest? You can find the installation guide in the next section of the documentation: [Installation →](/docs/installation)
+
