@@ -33,6 +33,7 @@
   - [Snapshot Testing](/docs/snapshot-testing)
   - [Custom Helpers](/docs/custom-helpers)
   - [Custom Expectations](/docs/custom-expectations)
+  - [Profanity](/docs/profanity)
 
 - ## Advanced Topics
   - [CLI API Reference](/docs/cli-api-reference)

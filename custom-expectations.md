@@ -104,4 +104,4 @@ expect()->pipe('toBe', function (Closure $next, mixed $expected) {
 
 ---
 
-As demonstrated, creating custom expectations can significantly simplify your code by eliminating the need to duplicate the logic to verify that your tests are behaving as anticipated. In the following chapter, we will explore additional CLI options that Pest provides: [CLI API Reference](/docs/cli-api-reference)
+As demonstrated, creating custom expectations can significantly simplify your code by eliminating the need to duplicate the logic to verify that your tests are behaving as anticipated. In the following chapter, we will explore how Pest can scan for Profanity, to help you maintain a professional codebase: [Profanity Plugin](/docs/profanity)
