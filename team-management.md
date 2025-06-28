@@ -142,4 +142,4 @@ describe('contacts', function () {
 
 ---
 
-Now, let's dive into architectural testing and how it can benefit your development process. By performing architectural testing, you can evaluate the overall design of your application and identify potential flaws before they become significant issues: [Arch Testing](/docs/arch-testing)
+Next, we will explore browser testing with Pest, which allows you to test your application's user interface in a real browser environment. This is particularly useful for testing complex interactions and ensuring that your application behaves as expected from a user's perspective: [Browser Testing →](/docs/browser-testing)
