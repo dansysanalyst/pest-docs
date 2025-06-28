@@ -28,6 +28,7 @@ You can expect a smooth and efficient coding experience thanks to Pest's easy-to
 In addition to its exceptional test reporting, Pest also offers a range of other valuable features, including:
 
 - Built-in [parallel](/docs/optimizing-tests#parallel) features for faster test runs
+- [Browser Testing](/docs/browser-testing) for testing your application in various browsers and devices
 - Beautiful [documentation](/docs/installation) that's easy to navigate
 - Native [profiling tools](/docs/optimizing-tests#profiling) to optimize slow-running tests
 - Out-of-the-box [Architectural Testing](/docs/arch-testing) to test application rules

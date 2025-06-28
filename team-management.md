@@ -139,7 +139,6 @@ describe('contacts', function () {
 })->wip(assignee: 'nunomaduro');
 ```
 
-
 ---
 
 Next, we will explore browser testing with Pest, which allows you to test your application's user interface in a real browser environment. This is particularly useful for testing complex interactions and ensuring that your application behaves as expected from a user's perspective: [Browser Testing →](/docs/browser-testing)

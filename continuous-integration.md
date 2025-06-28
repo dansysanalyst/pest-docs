@@ -29,7 +29,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.2
+          php-version: 8.3
           tools: composer:v2
           coverage: xdebug
 
@@ -44,6 +44,19 @@ Naturally, you may customize the script above according to your requirements. Fo
 
 Once you have created your `tests.yml` file, commit and push the `tests.yml` file so GitHub Actions can run your tests. Keep in mind that once you make this commit, your test suite will execute on all new pull requests and commits.
 
+### Using Browser Testing with GitHub Actions
+
+If you want to use [Browser Testing](/docs/browser-testing) with GitHub Actions, be sure to add a step that installs [Playwright](https://playwright.dev/docs/ci#github-actions) before running your tests. Here is an example of how to do this:
+
+```yaml
+      - name: Install Playwright Browsers
+        run: npx playwright install
+
+      - name: Run Browser Tests
+        run: ./vendor/bin/pest --ci --parallel
+```
+
+> Note: Be sure to run your browser tests in parallel to speed up the execution time. You can do this by adding the `--parallel` flag to the Pest command.
 
 ## Example With GitLab CI/CD Pipelines
 
@@ -126,7 +139,7 @@ To get started, add the following configuration to your `.chipperci.yml` file. T
 version: 1
 
 environment:
-  php: 8.2
+  php: 8.3
   node: 16
 
 # Optional services

@@ -3,6 +3,38 @@ title: Upgrade Guide
 description: Upgrading To 3.x From 2.x
 ---
 
+## Upgrading To 4.x From 3.x
+
+> **Estimated Upgrade Time**: 2 minutes
+
+We make an effort to document every potential breaking change, but some of these changes may exist in less frequently used sections of the framework. As a result, only a subset of these changes may impact your application.
+
+### Updating Dependencies
+
+> Likelihood Of Impact: High
+
+Pest 4 now requires PHP 8.3.0 or greater. To start migrating from Pest 3 to Pest 4, update the `pestphp/pest` dependency to `^4.0` in your application's `composer.json` file.
+
+```diff
+-    "pestphp/pest": "^3.0",
++    "pestphp/pest": "^4.0",
+```
+
+All other Pest maintained plugins should be updated to version `^4.0` in your application's `composer.json` file.
+
+```diff
+-    "pestphp/pest-plugin-laravel": "^3.0",
++    "pestphp/pest-plugin-laravel": "^4.0",
+```
+
+### PHPUnit 11 2 Changes
+
+> Likelihood Of Impact: Medium
+
+Pest 4 is built on top of PHPUnit 12. This means that any notable changes made to PHPUnit 12 might have an impact on your test suite. To examine all the changes introduced in PHPUnit 12, please consult the [PHPUnit 12 changelog](https://github.com/sebastianbergmann/phpunit/blob/11.0.0/ChangeLog-11.0.md).
+
+---
+
 ## Upgrading To 3.x From 2.x
 
 > **Estimated Upgrade Time**: 2 minutes
