@@ -1,4 +1,5 @@
 - ## Press
+  - [Pest v4 is Here! Now with Browser Testing](/docs/pest-v4-is-here-now-with-browser-testing)
   - [Pest v3 Now Available](/docs/pest3-now-available)
   - [Announcing Stressless](/docs/announcing-stressless)
   - [Pest's Spicy Summer Release](/docs/pest-spicy-summer-release)
