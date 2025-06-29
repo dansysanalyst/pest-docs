@@ -9,7 +9,7 @@ description: Today, we’re thrilled to announce Pest v4 — our biggest release
 
 # Pest v4 Is Here — Now with Browser Testing
 
-Today, we’re thrilled to announce the release of **Pest v4**, bringing the biggest testing upgrade yet: powerful **[Browser Testing](/docs/browser-testing]**. Pest’s new browser testing features let you run elegant, maintainable browser tests — with first-class support for Laravel’s testing API and the ability to run tests in parallel. For the first time, this is browser testing that feels as good as writing unit tests.
+Today, we’re thrilled to announce the release of **Pest v4**, bringing the biggest testing upgrade yet: powerful **[Browser Testing](/docs/browser-testing)**. Pest’s new browser testing features let you run elegant, maintainable browser tests — with first-class support for Laravel’s testing API and the ability to run tests in parallel. For the first time, this is browser testing that feels as good as writing unit tests.
 
 Here is an example using [Laravel](https://laravel.com):
 
@@ -37,12 +37,13 @@ it('may reset the password', function () {
 ```
 
 With Pest v4’s browser testing, you can:
+- Seamlessly use **Laravel features** like `Event::fake()`, `assertAuthenticated()`, and model factories
+- Use `RefreshDatabase`, even with SQLite in-memory databases, to ensure a clean state for each test
 - Test on **multiple browsers** (Chrome, Firefox, Safari)
 - Test on **different devices** and viewports (like iPhone 14 Pro, tablets, or custom breakpoints)
 - Switch **color schemes** (light/dark mode)
-- Interact with the page (click, type, scroll, select, submit)
+- Interact with the page (click, type, scroll, select, submit, drag-and-drop, touch gestures, etc.)
 - Run **parallel browser tests** for dramatically faster suites
-- Seamlessly use **Laravel features** like `Event::fake()`, `assertAuthenticated()`, and model factories
 - Take **screenshots** or pause tests for debugging
 - …all with the elegance of Pest syntax
 - **Playwright-based** — modern, fast, and reliable
