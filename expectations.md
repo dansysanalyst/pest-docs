@@ -897,6 +897,7 @@ The `each()` modifier allows you to create an expectation on each item of the gi
 expect([1, 2, 3])->each->toBeInt();
 expect([1, 2, 3])->each->not->toBeString();
 expect([1, 2, 3])->each(fn ($number) => $number->toBeLessThan(4));
+expect([1, 2, 3])->each(fn ($number, $key) => $number->toEqual($key + 1));
 ```
 
 <a name="expect-json"></a>
