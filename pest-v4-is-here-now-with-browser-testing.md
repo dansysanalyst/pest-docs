@@ -6,6 +6,14 @@ description: Today, we’re thrilled to announce Pest v4 — our biggest release
 > Note: This is a placeholder announcement for early testers only. Pest v4 is not yet publicly released. Details may change before the final launch. Please do not share this publicly.
 > To get started with Pest v4's new features including browser testing, please refer to the upgrade guide: [Upgrade Guide →](/docs/upgrade-guide).
 
+- [Browser Testing](#pest-v4-is-here-now-with-browser-testing)
+- [Smoke Testing](#smoke-testing)
+- [Visual Regression Testing](#visual-regression-testing)
+- [Test Sharding](#test-sharding)
+- [Type Coverage Is Much Faster](#type-coverage-is-much-faster)
+- [Profanity Checking](#profanity-checking)
+- [On Top of PHPUnit 12](#on-top-of-phpunit-12)
+
 # Pest v4 Is Here — Now with Browser Testing
 
 Today, we’re thrilled to announce the release of **Pest v4**, bringing the biggest testing upgrade yet: powerful **[Browser Testing](/docs/browser-testing)**. Pest’s new browser testing features let you run elegant, maintainable browser tests — with first-class support for Laravel’s testing API and the ability to run tests in parallel. For the first time, this is browser testing that feels as good as writing unit tests.
@@ -115,7 +123,40 @@ You may combine this with the `--parallel` option to run your tests in parallel,
 
 Remember the days when you had to wait for your type coverage to run? Not anymore! Pest v4 introduces a new type coverage engine that is significantly faster than previous versions.
 
-Type coverage is now up to 10x faster, on a 10 Core machine, and pretty much instant after the first run. This means you can get immediate feedback on your type coverage without waiting for long periods of time.
+Type coverage is 2x faster on the first run and instant on subsequent runs. This means you can quickly check your type coverage without waiting for long periods, making your development workflow much more efficient.
+
+In addition, Type Coverage now supports **Sharding**. This means you can run type coverage with the `--shard` option, just like you do with your tests.
+
+## Profanity Checking
+
+Pest v4 introduces a new feature that allows you to check for profanity in your test code. This is particularly useful for maintaining a clean and professional codebase, especially in collaborative environments.
+
+You can enable profanity checking by adding the `--profanity` option when running Pest:
+
+```bash
+./vendor/bin/pest --profanity
+```
+
+To start using Pest's Profanity plugin, you need to require the plugin via Composer.
+
+```bash
+composer require pestphp/pest-plugin-profanity --dev
+```
+
+After requiring the plugin, you may utilize the `--profanity` option to generate a report of your profanity.
+
+```bash
+./vendor/bin/pest --profanity
+```
+
+<img src="/assets/img/profanity.png" style="width: 100%;" />
+
+If any of your files contain profanity, they will be highlighted in red and displayed using their respective line
+numbers and the profane word(s) that have been found.
+
+As an example, `pr31(f*ck)` means that the word "fuck" was found on line 31.
+
+To learn more about the Profanity plugin and how to configure it, check out the [Profanity documentation](/docs/profanity).
 
 ### On Top of PHPUnit 12
 
