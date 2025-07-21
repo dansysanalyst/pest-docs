@@ -86,10 +86,11 @@ test('example', function () {
 
 #### Using Other Browsers
 
-By default, the `visit()` method uses Chrome as the browser. However, if you want to use a different browser, you can specify it using the `inChrome()`, `inFirefox()`, or `inSafari()` methods. For example, to use Firefox, you can do the following:
+By default, the `visit()` method uses Chrome as the browser. However, if you want to use a different browser, you can specify it using the `--browser` option when running the tests:
 
-```php
-$page = visit('/')->inFirefox();
+```bash
+./vendor/bin/pest --browser=firefox
+./vendor/bin/pest --browser=safari
 ```
 
 ### Using Other Devices
