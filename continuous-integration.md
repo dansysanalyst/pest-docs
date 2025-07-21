@@ -181,6 +181,32 @@ Naturally, you may customize the scripts above according to your requirements. F
 
 Once you have created your `.chipperci.yml` file, commit and push the `.chipperci.yml` file so Chipper CI can run your tests. Keep in mind that once you make this commit, your test suite will execute on all new commits.
 
+## Sharding Your Tests
+
+If you have a large test suite, you may want to consider sharding your tests across multiple CI jobs to speed up the execution time. Pest supports test sharding out of the box, allowing you to split your tests into smaller groups that can be run in parallel.
+
+To shard your tests, you can use the `--shard` option when running Pest. For example, if you want to run the first shard of your tests, you can use the following command:
+
+```bash
+./vendor/bin/pest --shard=1/4
+```
+
+To implement test sharding in your CI configuration, you can create multiple jobs that run different shards of your test suite. Here is an example of how to do this with GitHub Actions:
+
+```yml
+strategy:
+  matrix:
+    shard: [1, 2, 3, 4, 5]
+
+name: Tests (Shard ${{ matrix.shard }}/5)
+
+steps:
+  - name: Run tests
+    run: pest --parallel --shard ${{ matrix.shard }}/5
+```
+
+This configuration will create five jobs, each running a different shard of your test suite. You can adjust the number of shards based on the size of your test suite and the resources available in your CI environment.
+
 ---
 
 Great job setting up Continuous Integration for your project to ensure codebase stability! Now, let's take a deeper dive into Pest's concepts by exploring it's test configuration capabilities: [Configuring Pest →](/docs/configuring-tests)

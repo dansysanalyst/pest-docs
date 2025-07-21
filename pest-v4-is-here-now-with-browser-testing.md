@@ -119,6 +119,20 @@ You may combine this with the `--parallel` option to run your tests in parallel,
 ./vendor/bin/pest --shard=1/4 --parallel
 ```
 
+Finally, to easily set up sharding your CI configuration, you just have to ensure each job in your CI configuration runs a different shard of your test suite. For example, in GitHub Actions, you can use the `matrix` strategy to define multiple jobs that run different shards:
+
+```yaml
+strategy:
+  matrix:
+    shard: [1, 2, 3, 4, 5]
+
+name: Tests (Shard ${{ matrix.shard }}/5)
+
+steps:
+  - name: Run tests
+    run: pest --parallel --shard ${{ matrix.shard }}/5
+```
+
 ## Type Coverage Is Much Faster
 
 Remember the days when you had to wait for your type coverage to run? Not anymore! Pest v4 introduces a new type coverage engine that is significantly faster than previous versions.
