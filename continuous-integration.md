@@ -49,11 +49,18 @@ Once you have created your `tests.yml` file, commit and push the `tests.yml` fil
 If you want to use [Browser Testing](/docs/browser-testing) with GitHub Actions, be sure to add a step that installs [Playwright](https://playwright.dev/docs/ci#github-actions) before running your tests. Here is an example of how to do this:
 
 ```yaml
-      - name: Install Playwright Browsers
-        run: npx playwright install
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
 
-      - name: Run Browser Tests
-        run: ./vendor/bin/pest --ci --parallel
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Run Browser Tests
+      run: ./vendor/bin/pest --ci --parallel
 ```
 
 > Note: Be sure to run your browser tests in parallel to speed up the execution time. You can do this by adding the `--parallel` flag to the Pest command.

@@ -143,6 +143,26 @@ $page->navigate('/about')
      ->assertSee('About Us');
 ```
 
+### Locating Elements
+
+You can locate elements in the DOM using text or CSS selectors. Pest provides a simple syntax for locating elements:
+
+```php
+// Clicks the first link with the text "Login"
+$page->click('Login');
+
+// Clicks the first element with the class "btn-primary"
+$page->click('.btn-primary'); 
+
+// Clicks the element with the data-test attribute "login"
+$page->click('@login'); 
+
+// Clicks the element with the ID "submit-button"
+$page->click('#submit-button'); 
+
+// etc...
+```
+
 ## Table of Contents
 
 ### Available Assertions
@@ -1022,17 +1042,18 @@ After, you can run your tests with the `--headed` option to open the browser win
 
 You may refer to Pest's [Continuous Integration](https://pestphp.com/docs/continuous-integration) documentation for more information on how to run your browser tests in a CI environment.
 
-However, the only requirement is you must ensure playwright is installed in your CI environment. You can do this by running the following command:
-
-```bash
-npx playwright install
-```
-
-As example, if you are using GitHub Actions, you can add the following step to your workflow file:
+However, if you are using GitHub Actions, you need to add the following steps to your workflow file:
 
 ```yaml
-- name: Install Playwright Browsers
-  run: npx playwright install
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
 ```
 
 ---
