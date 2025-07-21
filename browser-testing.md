@@ -263,9 +263,10 @@ $page->click('#submit-button');
 
 <div class="collection-method-list" markdown="1">
 
-[dd](#dd)
-[wait](#wait)
+[debug](#debug)
 [screenshot](#screenshot)
+[tinker](#tinker)
+[headed](#headed)
 
 </div>
 
@@ -1010,12 +1011,14 @@ $page->waitForKey(); // Useful for debugging
 
 ## Debugging tests
 
-Sometimes you may want to debug your browser tests. Pest provides a convenient way to do this by using the `dd()` method, which dumps the current page's content and stops the execution:
+<a name="debug"></a>
+Sometimes you may want to debug your browser tests. Pest provides a convenient way to do this by using the `debug()` method, which focus Pest only on the current test and allows you to inspect the page state:
 
 ```php
-$page->dd();
+$page->debug();
 ```
 
+<a name="screenshot"></a>
 You can also take a screenshot of the current page using the `screenshot()` method. This is useful for visual debugging:
 
 ```php
@@ -1024,15 +1027,15 @@ $page->screenshot(fullPage: true);
 $page->screenshot(filename: 'custom-name');
 ```
 
-It may be useful to actually visit the page in your browser while debugging. You can do this by using the `wait()` method, and running your tests with the `--headed` option:
+<a name="tinker"></a>
+You can also use the `tinker()` method to open a Tinker session in the context of the current page. This allows you to interact with the page using PHP code:
 
 ```php
-$page = visit('/')->on()->mobile()->firefox();
-
-$page->wait(); // Without any arguments, it will wait until key is pressed
+$page->tinker();
 ```
 
-After, you can run your tests with the `--headed` option to open the browser window:
+<a name="headed"></a>
+After you can run your tests with the `--headed` option to open the browser window:
 
 ```bash
 ./vendor/bin/pest --headed
