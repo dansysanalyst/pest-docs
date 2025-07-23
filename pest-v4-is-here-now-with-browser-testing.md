@@ -172,6 +172,10 @@ As an example, `pr31(f*ck)` means that the word "fuck" was found on line 31.
 
 To learn more about the Profanity plugin and how to configure it, check out the [Profanity documentation](/docs/profanity).
 
+### Miscellaneous Improvements
+
+- You may now use `skipLocally()` or `skipOnCi` to conditionally skip tests based on the environment.
+
 ### On Top of PHPUnit 12
 
 Pest v4 is built on top of PHPUnit 12, which means you get all the latest features and improvements from PHPUnit. As such, be sure to check out the [PHPUnit 12 release announcement](https://phpunit.de/announcements/phpunit-12.html).
