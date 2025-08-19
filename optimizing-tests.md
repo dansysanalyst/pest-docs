@@ -13,9 +13,7 @@ Finally, it's often useful to focus solely on your test suite's failures. To do 
 
 ## Parallel Testing
 
-> In Pest 2, Parallel testing achieved a significant milestone, running up to 80% faster than before. This remarkable improvement was the result of a complete rebuild of the parallel test core system, which introduced advanced techniques for process reuse between test case runs. While Pest 3 bring further innovations, this upgrade in Pest 2 marked a turning point for parallel testing performance.
-
-By default, Pest executes your tests sequentially within a single process. However, you can significantly decrease the time needed to run your tests by utilizing the `--parallel` option to run tests concurrently across multiple processes.
+By default, Pest executes your tests sequentially within a single process. However, you can significantly decrease the time needed to run your tests by using the --parallel option to run them concurrently across multiple processes. If you’re running on Windows, be sure to use a WSL terminal.
 
 ```bash
 ./vendor/bin/pest --parallel
