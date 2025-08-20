@@ -14,7 +14,6 @@ The following plugins are maintained by the Pest team:
 - [Faker](#faker)
 - [Laravel](#laravel)
 - [Livewire](#livewire)
-- [Watch](#watch)
 
 ---
 
@@ -156,47 +155,6 @@ it('can be decremented', function () {
         ->call('decrement')
         ->assertSee(-1);
 });
-```
-
----
-
-<a name="watch"></a>
-## Watch
-
-**Source code**: [github.com/pestphp/pest-plugin-watch](https://github.com/pestphp/pest-plugin-watch)
-
-To install Pest's "watch" plugin, you need to require the plugin via Composer.
-
-```bash
-composer require pestphp/pest-plugin-watch --dev
-```
-
-Make sure you also install [`fswatch`](https://github.com/emcrisostomo/fswatch#getting-fswatch) so Pest can monitor when a file changes.
-
-Once both the plugin and `fswatch` are installed, you will be able to use the `--watch` option when running Pest. This option instructs Pest to monitor your application and automatically re-run your tests when you change files within a list of specified directories.
-
-```bash
-pest --watch
-```
-
-By default, the plugin monitors the following directories.
-
-```plain
-tests/
-app/
-src/
-```
-
-To customize the watched directories, supply a comma-separated list of directories (relative to your application root) to the `--watch` flag.
-
-```bash
-pest --watch=app,routes,tests
-```
-
-By default, the output is not colored, as watch mode starts a new process, so Pest doesn't know it's running in a Terminal. To force Pest's output to be colored, you can use the `--colors` flag.
-
-```bash
-pest --watch --colors=always
 ```
 
 ---

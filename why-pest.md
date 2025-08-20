@@ -35,7 +35,7 @@ In addition to its exceptional test reporting, Pest also offers a range of other
 - [Coverage](/docs/test-coverage) report directly on the terminal to track code coverage
 - [Mutation Testing](#mutation-testing) to evaluate the quality of your test suite
 - [Team Management](/docs/team-management) to manage tasks / todos with your team
-- Dozens of [optional plugins](/docs/plugins), such as Watch Mode and [Snapshot testing](https://github.com/spatie/pest-plugin-snapshots), to customize Pest to fit your needs.
+- Dozens of [optional plugins](/docs/plugins), such as [Snapshot testing](https://github.com/spatie/pest-plugin-snapshots), to customize Pest to fit your needs.
 
 Whether you're engaged in a small personal project or a large-scale enterprise application, Pest has got you covered. So if you want to make the testing process enjoyable and efficient, give Pest a try. We're confident that you'll love it as much as we do.
 
