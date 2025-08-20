@@ -27,11 +27,11 @@ All other Pest maintained plugins should be updated to version `^4.0` in your ap
 +    "pestphp/pest-plugin-laravel": "^4.0",
 ```
 
-### PHPUnit 11 2 Changes
+### PHPUnit 12 Changes
 
 > Likelihood Of Impact: Medium
 
-Pest 4 is built on top of PHPUnit 12. This means that any notable changes made to PHPUnit 12 might have an impact on your test suite. To examine all the changes introduced in PHPUnit 12, please consult the [PHPUnit 12 changelog](https://github.com/sebastianbergmann/phpunit/blob/11.0.0/ChangeLog-11.0.md).
+Pest 4 is built on top of PHPUnit 12. This means that any notable changes made to PHPUnit 12 might have an impact on your test suite. To examine all the changes introduced in PHPUnit 12, please consult the [PHPUnit 12 changelog](https://github.com/sebastianbergmann/phpunit/blob/12.0.0/ChangeLog-12.0.md).
 
 ---
 
