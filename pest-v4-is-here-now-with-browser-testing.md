@@ -128,9 +128,9 @@ Finally, to easily set up sharding your CI configuration, you just have to ensur
 ```yaml
 strategy:
   matrix:
-    shard: [1, 2, 3, 4, 5]
+    shard: [1, 2, 3, 4]
 
-name: Tests (Shard ${{ matrix.shard }}/5)
+name: Tests (Shard ${{ matrix.shard }}/4)
 
 steps:
   - name: Run tests

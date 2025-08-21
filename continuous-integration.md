@@ -188,7 +188,7 @@ If you have a large test suite, you may want to consider sharding your tests acr
 To shard your tests, you can use the `--shard` option when running Pest. For example, if you want to run the first shard of your tests, you can use the following command:
 
 ```bash
-./vendor/bin/pest --shard=1/4
+./vendor/bin/pest --shard=1/5
 ```
 
 To implement test sharding in your CI configuration, you can create multiple jobs that run different shards of your test suite. Here is an example of how to do this with GitHub Actions:
