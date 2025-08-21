@@ -1,9 +1,7 @@
 ---
 title: Pest v4 Is Here — Now with Browser Testing
-description: Today, we’re thrilled to announce Pest v4 — our biggest release yet, featuring powerful new browser testing with parallel support and full Laravel integration.
+description: Today, we're thrilled to announce Pest v4 — our biggest release yet, featuring powerful new browser testing with parallel support and full Laravel integration.
 ---
-
-> Note: Pest v4 is not yet released. Details may change before the final launch.
 
 > To get started with Pest v4's new features including browser testing, please refer to the upgrade guide: [Upgrade Guide →](/docs/upgrade-guide).
 
@@ -17,9 +15,13 @@ description: Today, we’re thrilled to announce Pest v4 — our biggest release
 
 # Pest v4 Is Here — Now with Browser Testing
 
-Today (August 21), we’re thrilled to announce the release of **Pest v4**, bringing the biggest testing upgrade yet: powerful **[Browser Testing](/docs/browser-testing)**. Pest’s new browser testing features let you run elegant, maintainable browser tests — with first-class support for Laravel’s testing API and the ability to run tests in parallel. For the first time, this is browser testing that feels as good as writing unit tests.
+Today, we're thrilled to announce the release of **Pest v4**, bringing the biggest testing upgrade yet: powerful **[Browser Testing](/docs/browser-testing)**. Pest's new browser testing features let you run elegant, maintainable browser tests — with first-class support for Laravel's testing API and the ability to run tests in parallel. For the first time, this is browser testing that feels as good as writing unit tests.
 
-Here is an example using [Laravel](https://laravel.com):
+Here is the creator of Pest, [Nuno Maduro](https://twitter.com/enunomaduro), demoing the new browser testing features in Pest v4 at Laracon US:
+
+[![Pest v4](/assets/pest4_play.png)](https://youtu.be/f5gAgwwwwOI?si=LtPpySZe3tf8qMjz&t=52)
+
+Here is an example of Browser Testing using [Laravel](https://laravel.com):
 
 ```php
 it('may reset the password', function () {
@@ -34,17 +36,17 @@ it('may reset the password', function () {
         ->inDarkMode(); // or ->inLightMode()
 
     $page->assertSee('Sign In')
-         ->assertNoJavascriptErrors() // or ->assertNoConsoleLogs()
          ->click('Forgot Password?')
-         ->fill('email', 'nuno@laravel.com')
-         ->click('Send Reset Link')
+         ->type('email', 'nuno@laravel.com')
+         ->press('Send Reset Link')
          ->assertSee('We have emailed your password reset link!')
+         ->assertNoJavascriptErrors(); // or ->assertNoConsoleLogs()
 
     Notification::assertSent(ResetPassword::class);
 });
 ```
 
-With Pest v4’s browser testing, you can:
+With Pest v4's browser testing, you can:
 - Seamlessly use **Laravel features** like `Event::fake()`, `assertAuthenticated()`, and model factories
 - Use `RefreshDatabase`, even with SQLite in-memory databases, to ensure a clean state for each test
 - Test on **multiple browsers** (Chrome, Firefox, Safari)
@@ -61,6 +63,7 @@ To get started with browser testing in Pest, you need to install the Pest Browse
 ```bash
 composer require pestphp/pest-plugin-browser --dev
 
+npm install playwright@latest
 npx playwright install
 ```
 
@@ -71,15 +74,18 @@ After, you may use the `visit()` function anywhere. Finally, running this test i
 Smoke testing your application in real browsers has never been easier. With Pest v4, you can literally visit all your application pages, and ensure they don't throw any JavaScript errors, and they don't log any console errors.
 
 ```php
-$pages = visit(['/', '/about', '/contact']);
+$routes = ['/', '/about', '/contact'];
 
-$pages->assertNoJavascriptErrors()
-      ->assertNoConsoleLogs();
+visit($routes)->assertNoSmoke();
+
+// assertNoSmoke() is a shorthand for:
+// - assertNoJavascriptErrors()
+// - assertNoConsoleLogs()
 ```
 
 ## Visual Regression Testing
 
-Want to ensure your pages look exactly as expected? Pest v4 introduces visual regression testing with the `assertScreenshotsMatches()` assertion. This allows you to take screenshots of your pages and compare them against baseline images, ensuring that your UI remains consistent across changes.
+Want to ensure your pages look exactly as expected over time? Pest v4 introduces visual regression testing with the `assertScreenshotsMatches()` assertion. This allows you to take screenshots of your pages and compare them against baseline images, ensuring that your UI remains consistent across changes.
 
 ```php
 $pages = visit(['/', '/about', '/contact']);
@@ -87,8 +93,7 @@ $pages = visit(['/', '/about', '/contact']);
 $pages->assertScreenshotsMatches();
 ```
 
-[image here missing]
-
+![Visual Regression Testing in Pest v4](/assets/pest4_play.png)
 
 This is just a glimpse of what Browser Testing in Pest v4 can do. Find out more about the new features below, and check out the [Browser Testing documentation](/docs/browser-testing) for a complete guide on how to get started.
 
@@ -173,9 +178,25 @@ As an example, `pr31(f*ck)` means that the word "fuck" was found on line 31.
 
 To learn more about the Profanity plugin and how to configure it, check out the [Profanity documentation](/docs/profanity).
 
+### Skip Locally or On CI
+
+Pest v4 introduces the ability to conditionally skip tests based on the environment. You can use `skipLocally()` to skip tests when running locally, or `skipOnCi` to skip tests when running on a CI server.
+
+```php
+it('does not run locally', function () {
+    // This test will be skipped when running locally
+})->skipLocally();
+
+it('does not run on CI', function () {
+    // This test will be skipped when running on a CI server
+})->skipOnCi();
+```
+
 ### Miscellaneous Improvements
 
 - You may now use `skipLocally()` or `skipOnCi` to conditionally skip tests based on the environment.
+- The `not->toHaveSuspiciousCharacters()` arch expectation has been added to help you identify potential suspicious characters in your code. This arch expectation is now enabled by default on the `php` arch preset.
+- The expectation `toBeSlug` has been added to help you validate that a string is a valid slug.
 
 ### On Top of PHPUnit 12
 

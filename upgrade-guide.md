@@ -1,6 +1,6 @@
 ---
 title: Upgrade Guide
-description: Upgrading To 3.x From 2.x
+description: Upgrading To 4.x From 3.x
 ---
 
 ## Upgrading To 4.x From 3.x
@@ -32,6 +32,12 @@ All other Pest maintained plugins should be updated to version `^4.0` in your ap
 > Likelihood Of Impact: Medium
 
 Pest 4 is built on top of PHPUnit 12. This means that any notable changes made to PHPUnit 12 might have an impact on your test suite. To examine all the changes introduced in PHPUnit 12, please consult the [PHPUnit 12 changelog](https://github.com/sebastianbergmann/phpunit/blob/12.0.0/ChangeLog-12.0.md).
+
+### Watch & Faker Plugin Deprecations
+
+> Likelihood Of Impact: Low
+
+The `pestphp/pest-plugin-watch` and `pestphp/pest-plugin-faker` plugins have been archived and are no longer maintained. The functionality provided by these plugins was not widely used, and therefore, they have been removed from Pest 4.
 
 ---
 
