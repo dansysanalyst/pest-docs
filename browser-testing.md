@@ -73,6 +73,12 @@ We recommend running tests in parallel using the `--parallel` option to speed up
 ./vendor/bin/pest --parallel
 ```
 
+For debugging purposes, you can run the tests in a headed mode and pause the execution at the end of the failed test run:
+
+```bash
+./vendor/bin/pest --debug
+```
+
 ### Navigation
 
 The `visit()` method is used to navigate to a specific URL in your browser test. It provides various methods to interact with the page:
@@ -92,6 +98,13 @@ By default, the `visit()` method uses Chrome as the browser. However, if you wan
 ```bash
 ./vendor/bin/pest --browser=firefox
 ./vendor/bin/pest --browser=safari
+```
+
+If you wish to use a different browser by default without specifying it in the command line, you can set it in your `Pest.php` configuration file:
+
+```php
+pest()->browser()->inFirefox();
+pest()->browser()->inSafari();
 ```
 
 ### Using Other Devices
@@ -162,6 +175,14 @@ $page->click('@login');
 $page->click('#submit-button'); 
 
 // etc...
+```
+
+### Configuring Timeouts
+
+Sometimes, elements may take time to appear on the page. By default, Pest waits for `5` seconds before timing out. You can configure the default timeout for browser tests in your `Pest.php` configuration file:
+
+```php
+pest()->browser()->timeout(10);
 ```
 
 ## Table of Contents
@@ -1013,7 +1034,13 @@ $page->waitForKey(); // Useful for debugging
 ## Debugging tests
 
 <a name="debug"></a>
-Sometimes you may want to debug your browser tests. Pest provides a convenient way to do this by using the `debug()` method, which focus Pest only on the current test and allows you to inspect the page state:
+Sometimes you may want to debug your browser tests. Pest provides a convenient way to do this by using the `--debug` option, which makes pest to open the browser window and pause the execution of the test when it fails. You can then inspect the page and see what went wrong.
+
+```bash
+./vendor/bin/pest --debug
+```
+
+Optionally, you can also use the `debug()` method in your test to pause the execution and open the browser window:
 
 ```php
 $page->debug();
@@ -1040,6 +1067,12 @@ After you can run your tests with the `--headed` option to open the browser wind
 
 ```bash
 ./vendor/bin/pest --headed
+```
+
+If you wish to run the tests in a headed mode by default, you can set it in your `Pest.php` configuration file:
+
+```php
+pest()->browser()->headed();
 ```
 
 ## Continuous Integration
