@@ -5,13 +5,13 @@ description: Today, we're thrilled to announce Pest v4 — our biggest release y
 
 > To get started with Pest v4's new features including browser testing, please refer to the upgrade guide: [Upgrade Guide →](/docs/upgrade-guide).
 
-- [Browser Testing](#pest-v4-is-here-now-with-browser-testing)
-- [Smoke Testing](#smoke-testing)
-- [Visual Regression Testing](#visual-regression-testing)
-- [Test Sharding](#test-sharding)
-- [Type Coverage Is Much Faster](#type-coverage-is-much-faster)
-- [Profanity Checking](#profanity-checking)
-- [On Top of PHPUnit 12](#on-top-of-phpunit-12)
+- [Browser Testing](#content-pest-v4-is-here-now-with-browser-testing)
+- [Smoke Testing](#content-smoke-testing)
+- [Visual Regression Testing](#content-visual-regression-testing)
+- [Test Sharding](#content-test-sharding)
+- [Type Coverage Is Much Faster](#content-type-coverage-is-much-faster)
+- [Profanity Checking](#content-profanity-checking)
+- [On Top of PHPUnit 12](#content-on-top-of-phpunit-12)
 
 # Pest v4 Is Here — Now with Browser Testing
 
