@@ -53,6 +53,7 @@ To get started with browser testing in Pest, you need to install the Pest Browse
 ```bash
 composer require pestphp/pest-plugin-browser --dev
 
+npm install playwright@latest
 npx playwright install
 ```
 
