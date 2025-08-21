@@ -136,7 +136,7 @@ You can visit multiple pages simultaneously by passing an array of URLs to the `
 ```php
 $pages = visit(['/', '/about']);
 
-$page->assertNoSmoke()
+$pages->assertNoSmoke()
     ->assertNoConsoleLogs()
     ->assertNoJavaScriptErrors();
 
