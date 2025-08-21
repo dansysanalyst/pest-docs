@@ -93,8 +93,6 @@ $pages = visit(['/', '/about', '/contact']);
 $pages->assertScreenshotsMatches();
 ```
 
-![Visual Regression Testing in Pest v4](/assets/pest4_play.png)
-
 This is just a glimpse of what Browser Testing in Pest v4 can do. Find out more about the new features below, and check out the [Browser Testing documentation](/docs/browser-testing) for a complete guide on how to get started.
 
 ## Test Sharding
