@@ -27,6 +27,16 @@ All other Pest maintained plugins should be updated to version `^4.0` in your ap
 +    "pestphp/pest-plugin-laravel": "^4.0",
 ```
 
+### Snapshot Testing Changes
+
+> Likelihood Of Impact: High
+
+If you were using the `toMatchSnapshot`, Pest 4 changes the way snapshots names are generated. As such, you will need to update your snapshot names using the `--update-snapshots` option:
+
+```bash
+./vendor/bin/pest --update-snapshots
+```
+
 ### PHPUnit 12 Changes
 
 > Likelihood Of Impact: Medium
