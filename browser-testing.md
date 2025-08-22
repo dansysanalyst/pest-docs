@@ -992,7 +992,7 @@ $value = $page->value('input[name=email]');
 The `script` method executes a script in the context of the page:
 
 ```php
-$result = $page->script('return document.title');
+$result = $page->script('document.title');
 ```
 
 <a name="content"></a>
