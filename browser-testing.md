@@ -25,7 +25,7 @@ it('may sign in the user', function () {
 
     User::factory()->create([ // assumes RefreshDatabase trait is used on Pest.php...
         'email' => 'nuno@laravel.com',
-        'password' => bcrypt('password'),
+        'password' => 'password',
     ]);
 
     $page = visit('/')->on()->mobile()->firefox();
@@ -136,7 +136,7 @@ You can visit multiple pages simultaneously by passing an array of URLs to the `
 ```php
 $pages = visit(['/', '/about']);
 
-$page->assertNoSmoke()
+$pages->assertNoSmoke()
     ->assertNoConsoleLogs()
     ->assertNoJavaScriptErrors();
 
