@@ -185,6 +185,15 @@ Sometimes, elements may take time to appear on the page. By default, Pest waits 
 pest()->browser()->timeout(10);
 ```
 
+### Geolocation
+
+Sometimes, you need to define where the browser believes it is physically on the earth.  This method takes a latitude and longitude and will set the `geolocation` permission in the browser and then make the coordinates available via Javascript's getCurrentPosition API:
+
+```php
+$page = visit('/')
+     ->geolocation(39.399872, -8.224454);
+```
+
 ## Table of Contents
 
 ### Available Assertions
