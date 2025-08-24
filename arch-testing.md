@@ -735,6 +735,7 @@ Sometimes, you may want to apply the given expectation but excluding certain typ
 - [`extending()`](#modifier-extending)
 - [`implementing()`](#modifier-implementing)
 - [`using()`](#modifier-using)
+- [`abstracts()`](#modifier-abstracts)
 
 </div>
 
@@ -850,6 +851,18 @@ arch('app')
     ->expect('App')
     ->using(HasFactory::class)
     ->toExtend(Model::class);
+```
+
+<a name="modifier-abstracts"></a>
+### `abstracts()`
+
+The `abstracts()` modifier allows you to restrict the expectation to only abstract classes.
+
+```php
+arch('app')
+    ->expect('App')
+    ->abstracts()
+    ->toImplement(JsonSerializable::class);
 ```
 ---
 
