@@ -123,10 +123,10 @@ $page = visit('/')->on()->iPhone14Pro();
 
 ### Using Dark Mode
 
-Pest enforces a light color scheme by default. However, you can specify a dark color scheme using the `onDarkMode()` method:
+Pest enforces a light color scheme by default. However, you can specify a dark color scheme using the `inDarkMode()` method:
 
 ```php
-$page = visit('/')->onDarkMode();
+$page = visit('/')->inDarkMode();
 ```
 
 ### Visiting Multiple Pages
