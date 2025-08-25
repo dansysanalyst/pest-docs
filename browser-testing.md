@@ -36,7 +36,7 @@ it('may sign in the user', function () {
          ->fill('email', 'nuno@laravel.com')
          ->fill('password', 'password')
          ->click('Submit')
-         ->assertSee('Dashboard')
+         ->assertSee('Dashboard');
 
     $this->assertAuthenticated();
 
