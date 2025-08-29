@@ -134,7 +134,7 @@ name: Tests (Shard ${{ matrix.shard }}/4)
 
 steps:
   - name: Run tests
-    run: pest --parallel --shard ${{ matrix.shard }}/5
+    run: pest --parallel --shard ${{ matrix.shard }}/4
 ```
 
 ## Type Coverage Is Much Faster
