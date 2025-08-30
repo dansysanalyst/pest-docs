@@ -96,8 +96,8 @@ test('example', function () {
 By default, the `visit()` method uses Chrome as the browser. However, if you want to use a different browser, you can specify it using the `--browser` option when running the tests:
 
 ```bash
-./vendor/bin/pest --browser=firefox
-./vendor/bin/pest --browser=safari
+./vendor/bin/pest --browser firefox
+./vendor/bin/pest --browser safari
 ```
 
 If you wish to use a different browser by default without specifying it in the command line, you can set it in your `Pest.php` configuration file:
