@@ -273,6 +273,7 @@ pest()->browser()->timeout(10);
 [press](#press)
 [pressAndWaitFor](#press-and-wait-for)
 [drag](#drag)
+[hover](#hover)
 [submit](#submit)
 [value](#value)
 [script](#script)
@@ -991,6 +992,15 @@ The `drag` method drags an element to another element using selectors:
 
 ```php
 $page->drag('#item', '#target');
+```
+
+<a name="hover"></a>
+### hover
+
+The `hover` method hovers over the given element:
+
+```php
+$page->hover('#item');
 ```
 
 <a name="submit"></a>
