@@ -137,6 +137,7 @@ You can visit multiple pages simultaneously by passing an array of URLs to the `
 $pages = visit(['/', '/about']);
 
 $pages->assertNoSmoke()
+    ->assertNoAccessibilityIssues()
     ->assertNoConsoleLogs()
     ->assertNoJavaScriptErrors();
 
@@ -248,6 +249,7 @@ pest()->browser()->timeout(10);
 [assertNoSmoke](#assert-no-smoke)
 [assertNoConsoleLogs](#assert-no-console-logs)
 [assertNoJavaScriptErrors](#assert-no-javascript-errors)
+[assertNoAccessibilityIssues](#assert-no-accessibility-issues)
 [assertScreenshotMatches](#assert-screenshot-matches)
 
 </div>
@@ -814,6 +816,29 @@ The `assertNoJavaScriptErrors` method asserts there are no JavaScript errors on 
 ```php
 $page->assertNoJavaScriptErrors();
 ```
+
+<a name="assert-no-accessibility-issues"></a>
+### assertNoAccessibilityIssues
+
+The `assertNoAccessibilityIssues` method asserts there are no "serious" accessibility issues on the page:
+
+```php
+$page->assertNoAccessibilityIssues();
+```
+
+By default, the level is 1 (serious). You can change to one of the following levels:
+
+```
+0. Critical
+1. Serious
+2. Moderate
+3. Minor
+```
+
+- The level 0 (critical) only reports issues that cause severe barriers for individuals with disabilities. The organization may be subject to legal action if these issues are not addressed.
+- The level 1 (serious) includes all critical issues (level 0) and adds issues that significantly impact accessibility. The organization may be subject to legal action if these issues are not addressed.
+- The level 2 (moderate) includes all serious issues (level 1) and adds issues that moderately affect accessibility. The end-user would appreciate the fix, but it is not a barrier.
+- The level 3 (minor) includes all moderate issues (level 2) and adds issues that have a minor impact on accessibility. These issues are often related to best practices and do not significantly affect the user experience.
 
 ## Screenshot Assertions
 
