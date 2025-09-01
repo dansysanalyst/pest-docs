@@ -88,10 +88,13 @@ include_verbatim = false
 glob_ignore_case = false
 
 # Exclude URLs and mail addresses from checking (supports regex).
-#exclude = [ '.*\.github.com\.*' ]
 # receiving forbidden but valid link, receiving timeout but valid link
-exclude = ['https://opensource.org/licenses/MIT', 'https://twitter.com/pestphp', '^https://laracasts.com/series/(pest-driven-laravel|pest-from-scratch)$']
-
+exclude = [
+    'https://opensource.org/licenses/MIT',
+    'https://twitter.com/pestphp',
+    '^https://laracasts.com/series/(pest-driven-laravel|pest-from-scratch)$',
+    '^https://www.linkedin.com/learning/.*$',
+]
 
 # Exclude these filesystem paths from getting checked.
 #exclude_path = ["file/path/to/Ignore", "./other/file/path/to/Ignore"]
