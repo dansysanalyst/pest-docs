@@ -91,7 +91,7 @@ test('example', function () {
 });
 ```
 
-### Using Other Browsers
+#### Using Other Browsers
 
 By default, the `visit()` method uses Chrome as the browser. However, if you want to use a different browser, you can specify it using the `--browser` option when running the tests:
 
@@ -1075,11 +1075,12 @@ Sometimes you may want to debug your browser tests. Pest provides a convenient w
 ./vendor/bin/pest --debug
 ```
 
-Optionally, you can also use the `debug()` method in your test to pause the execution and open the browser window:
+Optionally, you can also use the `debug()` method in your test. It will limit execution to this test (like using [`only()`](filtering-tests.md#only)), pause the execution and open the browser window:
 
 ```php
 $page->debug();
 ```
+
 
 <a name="screenshot"></a>
 You can also take a screenshot of the current page using the `screenshot()` method. This is useful for visual debugging:
