@@ -57,10 +57,16 @@ Using the `--filter` option, it is possible to run tests that match a specified 
 <a name="group"></a>
 ### `--group`
 
-You can utilize the `--group` option to selectively run tests belonging to a particular group. To learn about assigning a tests or folders to groups, please refer to the [Grouping Tests](/docs/grouping-tests) documentation.
+You can utilize the `--group` option to selectively run tests belonging to a particular group. To learn about assigning tests or folders to groups, please refer to the [Grouping Tests](/docs/grouping-tests) documentation.
 
 ```bash
-./vendor/bin/pest --group=integration,browser
+./vendor/bin/pest --group=integration
+```
+
+In cases where multiple test groups need to be included, you need to use the `--group` option per group.
+
+```bash
+./vendor/bin/pest --group=integration --group=browser
 ```
 
 <a name="exclude-group"></a>
@@ -69,7 +75,13 @@ You can utilize the `--group` option to selectively run tests belonging to a par
 The `--exclude-group` option may be used to exclude specific test groups from being executed.
 
 ```bash
-./vendor/bin/pest --exclude-group=integration,browser
+./vendor/bin/pest --exclude-group=integration
+```
+
+In cases where multiple test groups need to be excluded, you need to use the `--exclude-group` option per group.
+
+```bash
+./vendor/bin/pest --exclude-group=integration --exclude-group=browser
 ```
 
 <a name="retry"></a>

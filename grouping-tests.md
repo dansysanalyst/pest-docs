@@ -21,12 +21,6 @@ As previously stated in the [Filtering Tests](/docs/filtering-tests) documentati
 ./vendor/bin/pest --group=feature
 ```
 
-To run tests from multiple groups, repeat the `--group` option.
-
-```bash
-./vendor/bin/pest --group=feature --group=unit
-```
-
 You also have the option to assign a particular test to a group by chaining the `group()` method onto the test function.
 
 ```php
