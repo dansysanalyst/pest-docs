@@ -262,6 +262,7 @@ pest()->browser()->timeout(10);
 [text](#text)
 [attribute](#attribute)
 [keys](#keys)
+[withKeyDown](#withKeyDown)
 [type](#type)
 [select](#select)
 [append](#append)
@@ -891,6 +892,22 @@ The `keys` method sends the given keys to the element matching the given selecto
 $page->keys('input[name=password]', 'secret');
 $page->keys('input[name=password]', ['{Control}', 'a']); // Keyboard shortcuts
 ```
+
+<a name="withKeyDown"></a>
+### withKeyDown
+
+The `withKeyDown` method executes the given callback while a key is held down:
+
+```php
+$page->withKeyDown('Shift', function () use ($page): void {
+    $page->keys('#input', ['KeyA', 'KeyB', 'KeyC']);
+}); // writes "ABC"
+```
+
+> Note: To respect held keys like Shift, use key codes such as KeyA, KeyB, KeyC.
+> 'a' always types a lowercase “a” and 'A' always types an uppercase “A”, regardless of modifiers.
+ 
+
 
 <a name="type"></a>
 ### type
