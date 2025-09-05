@@ -906,8 +906,6 @@ $page->withKeyDown('Shift', function () use ($page): void {
 
 > Note: To respect held keys like Shift, use key codes such as KeyA, KeyB, KeyC.
 > 'a' always types a lowercase “a” and 'A' always types an uppercase “A”, regardless of modifiers.
- 
-
 
 <a name="type"></a>
 ### type
