@@ -295,6 +295,8 @@ pest()->browser()->timeout(10);
 
 [debug](#debug)
 [screenshot](#screenshot)
+[responsiveScreenshots](#responsive-screenshots)
+[screenshotElement](#screenshot-element)
 [tinker](#tinker)
 [headed](#headed)
 
