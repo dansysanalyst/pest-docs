@@ -1154,10 +1154,38 @@ $page->debug();
 <a name="screenshot"></a>
 You can also take a screenshot of the current page using the `screenshot()` method. This is useful for visual debugging:
 
+NOTE: If you don't pass the filename, it will use the test name as the filename.
+
 ```php
 $page->screenshot();
 $page->screenshot(fullPage: true);
 $page->screenshot(filename: 'custom-name');
+```
+
+<a name="responsiveScreenshots"></a>
+You can also take screenshots of the current page in different device sizes using the `responsiveScreenshots()` method:
+
+```php
+$page->responsiveScreenshots();
+$page->responsiveScreenshots(filename: 'responsive-test');
+```
+
+You may also pass your own screen sizes:
+
+```php
+$responsiveScreenSizes = [
+    'xs' => ['width' => 360, 'height' => 640],
+    'sm' => ['width' => 640, 'height' => 360],
+];
+
+$page->responsiveScreenshots(filename: 'responsive-test', responsiveScreenSizes: $responsiveScreenSizes);
+```
+
+<a name="screenshotElement"></a>
+You can also take a screenshot of a specific element using the `screenshotElement()` method:
+
+```php
+$page->screenshotElement('#my-element');
 ```
 
 <a name="tinker"></a>
