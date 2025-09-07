@@ -187,6 +187,7 @@ pest()->browser()->timeout(10);
 ```
 
 ### Per-Test Overrides
+
 In addition to configuring defaults globally, you can override settings per test using the following methods:
 
 #### Setting Locale
@@ -199,6 +200,7 @@ it('shows the page in French', function () {
 });
 ```
 #### Setting Timezone
+
 ```php
 it('visits with user agent', function () {
     $page = visit('/')->withUserAgent('Googlebot');
@@ -208,6 +210,7 @@ it('visits with user agent', function () {
 ```
 
 #### Setting UserAgent
+
 ```php
 it('shows New York time', function () {
     $page = visit('/')->withTimezone('America/New_York');
