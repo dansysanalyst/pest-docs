@@ -200,17 +200,17 @@ $page->assertSee('Bienvenue');
 #### Setting Timezone
 
 ```php
-$page = visit('/')->withUserAgent('Googlebot');
+$page = visit('/')->withTimezone('America/New_York');
 
-$page->assertSee('Welcome, bot!');
+$page->assertSee('EST');
 ```
 
 #### Setting UserAgent
 
 ```php
-$page = visit('/')->withTimezone('America/New_York');
+$page = visit('/')->withUserAgent('Googlebot');
 
-$page->assertSee('EST');
+$page->assertSee('Welcome, bot!');
 ```
 
 ## Table of Contents
