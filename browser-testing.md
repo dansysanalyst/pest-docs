@@ -193,30 +193,24 @@ In addition to configuring defaults globally, you can override settings per test
 #### Setting Locale
 
 ```php
-it('shows the page in French', function () {
-    $page = visit('/')->withLocale('fr-FR');
+$page = visit('/')->withLocale('fr-FR');
 
-    $page->assertSee('Bienvenue');
-});
+$page->assertSee('Bienvenue');
 ```
 #### Setting Timezone
 
 ```php
-it('visits with user agent', function () {
-    $page = visit('/')->withUserAgent('Googlebot');
+$page = visit('/')->withUserAgent('Googlebot');
 
-    $page->assertSee('Welcome, bot!');
-});
+$page->assertSee('Welcome, bot!');
 ```
 
 #### Setting UserAgent
 
 ```php
-it('shows New York time', function () {
-    $page = visit('/')->withTimezone('America/New_York');
+$page = visit('/')->withTimezone('America/New_York');
 
-    $page->assertSee('EST');
-});
+$page->assertSee('EST');
 ```
 
 ## Table of Contents
