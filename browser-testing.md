@@ -188,7 +188,9 @@ pest()->browser()->timeout(10);
 
 ### Configuring User Agent
 
-You may want to set the user agent of the browser for all of your tests, you can configure this in the `Pest.php` configuration file:
+By default, the User Agent will default the Browser you're running for tests ie: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/133.0.6943.16 Safari/537.36` 
+
+You may wish to override the User Agent of the browser for all of your tests, you can configure this in the `Pest.php` configuration file:
 
 ```php
 pest()->browser()->userAgent('CustomUserAgent');
