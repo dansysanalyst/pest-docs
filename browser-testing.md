@@ -186,6 +186,14 @@ Sometimes, elements may take time to appear on the page. By default, Pest waits 
 pest()->browser()->timeout(10);
 ```
 
+### Configuring User Agent
+
+You may want to set the user agent of the browser for all of your tests, you can configure this in the `Pest.php` configuration file:
+
+```php
+pest()->browser()->userAgent('CustomUserAgent');
+```
+
 ## Table of Contents
 
 ### Available Assertions
