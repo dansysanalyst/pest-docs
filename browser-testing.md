@@ -183,7 +183,7 @@ $page->click('#submit-button');
 Sometimes, elements may take time to appear on the page. By default, Pest waits for `5` seconds before timing out. You can configure the default timeout for browser tests in your `Pest.php` configuration file:
 
 ```php
-pest()->browser()->timeout(10);
+pest()->browser()->timeout(10000);
 ```
 
 ## Table of Contents
