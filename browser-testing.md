@@ -1130,11 +1130,12 @@ Sometimes you may want to debug your browser tests. Pest provides a convenient w
 ./vendor/bin/pest --debug
 ```
 
-Optionally, you can also use the `debug()` method in your test to pause the execution and open the browser window:
+Optionally, you can also use the `debug()` method in your test. It will limit execution to this test (like using [`only()`](filtering-tests.md#only)), pause the execution and open the browser window:
 
 ```php
 $page->debug();
 ```
+
 
 <a name="screenshot"></a>
 You can also take a screenshot of the current page using the `screenshot()` method. This is useful for visual debugging:
