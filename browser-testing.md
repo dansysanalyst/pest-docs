@@ -205,6 +205,35 @@ $page = visit('/')
      ->geolocation(39.399872, -8.224454);
 ```
 
+### Configuring Locale
+
+You can set the locale for your test requests using the `withLocale` method. This is particularly useful for testing multilingual applications.
+
+```php
+$page = visit('/')->withLocale('fr-FR');
+
+$page->assertSee('Bienvenue');
+```
+### Configuring Timezone
+
+You can set the timezone for your test requests using the `withTimezone` method. This is useful for testing date and time displays in different time zones.
+
+```php
+$page = visit('/')->withTimezone('America/New_York');
+
+$page->assertSee('EST');
+```
+
+### Configuring UserAgent
+
+You can set the User-Agent header for your test requests using the `withUserAgent` method. This is useful for testing how your application responds to different types of clients, such as mobile browsers or bots.
+
+```php
+$page = visit('/')->withUserAgent('Googlebot');
+
+$page->assertSee('Welcome, bot!');
+```
+
 ## Table of Contents
 
 ### Available Assertions
