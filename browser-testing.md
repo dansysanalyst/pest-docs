@@ -186,18 +186,18 @@ Sometimes, elements may take time to appear on the page. By default, Pest waits 
 pest()->browser()->timeout(10);
 ```
 
-### Per-Test Overrides
+### Configuring Locale
 
-In addition to configuring defaults globally, you can override settings per test using the following methods:
-
-#### Setting Locale
+You can set the locale for your test requests using the `withLocale` method. This is particularly useful for testing multilingual applications.
 
 ```php
 $page = visit('/')->withLocale('fr-FR');
 
 $page->assertSee('Bienvenue');
 ```
-#### Setting Timezone
+### Configuring Timezone
+
+You can set the timezone for your test requests using the `withTimezone` method. This is useful for testing date and time displays in different time zones.
 
 ```php
 $page = visit('/')->withTimezone('America/New_York');
@@ -205,7 +205,9 @@ $page = visit('/')->withTimezone('America/New_York');
 $page->assertSee('EST');
 ```
 
-#### Setting UserAgent
+### Configuring UserAgent
+
+You can set the User-Agent header for your test requests using the `withUserAgent` method. This is useful for testing how your application responds to different types of clients, such as mobile browsers or bots.
 
 ```php
 $page = visit('/')->withUserAgent('Googlebot');
