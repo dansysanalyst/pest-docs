@@ -293,7 +293,6 @@ pest()->browser()->timeout(10);
 
 [debug](#debug)
 [screenshot](#screenshot)
-[responsiveScreenshots](#responsive-screenshots)
 [screenshotElement](#screenshot-element)
 [tinker](#tinker)
 [headed](#headed)
@@ -1136,25 +1135,6 @@ NOTE: If you don't pass the filename, it will use the test name as the filename.
 $page->screenshot();
 $page->screenshot(fullPage: true);
 $page->screenshot(filename: 'custom-name');
-```
-
-<a name="responsiveScreenshots"></a>
-You can also take screenshots of the current page in different device sizes using the `responsiveScreenshots()` method:
-
-```php
-$page->responsiveScreenshots();
-$page->responsiveScreenshots(filename: 'responsive-test');
-```
-
-You may also pass your own screen sizes:
-
-```php
-$responsiveScreenSizes = [
-    'xs' => ['width' => 360, 'height' => 640],
-    'sm' => ['width' => 640, 'height' => 360],
-];
-
-$page->responsiveScreenshots(filename: 'responsive-test', responsiveScreenSizes: $responsiveScreenSizes);
 ```
 
 <a name="screenshotElement"></a>
