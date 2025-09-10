@@ -85,12 +85,12 @@ visit($routes)->assertNoSmoke();
 
 ## Visual Regression Testing
 
-Want to ensure your pages look exactly as expected over time? Pest v4 introduces visual regression testing with the `assertScreenshotsMatches()` assertion. This allows you to take screenshots of your pages and compare them against baseline images, ensuring that your UI remains consistent across changes.
+Want to ensure your pages look exactly as expected over time? Pest v4 introduces visual regression testing with the `assertScreenshotMatches()` assertion. This allows you to take screenshots of your pages and compare them against baseline images, ensuring that your UI remains consistent across changes.
 
 ```php
 $pages = visit(['/', '/about', '/contact']);
 
-$pages->assertScreenshotsMatches();
+$pages->assertScreenshotMatches();
 ```
 
 This is just a glimpse of what Browser Testing in Pest v4 can do. Find out more about the new features below, and check out the [Browser Testing documentation](/docs/browser-testing) for a complete guide on how to get started.
