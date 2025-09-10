@@ -1,6 +1,6 @@
 ---
 title: Browser Testing
-description: 
+description:
 ---
 
 # Browser Testing
@@ -20,7 +20,7 @@ This is a basic example of a browser test that checks if the homepage contains t
 Here is an example of a more complex browser test, on Laravel, that checks if a user can sign in:
 
 ```php
-it('may sign in the user', function () { 
+it('may sign in the user', function () {
     Event::fake();
 
     User::factory()->create([ // assumes RefreshDatabase trait is used on Pest.php...
@@ -167,13 +167,13 @@ You can locate elements in the DOM using text or CSS selectors. Pest provides a 
 $page->click('Login');
 
 // Clicks the first element with the class "btn-primary"
-$page->click('.btn-primary'); 
+$page->click('.btn-primary');
 
 // Clicks the element with the data-test attribute "login"
-$page->click('@login'); 
+$page->click('@login');
 
 // Clicks the element with the ID "submit-button"
-$page->click('#submit-button'); 
+$page->click('#submit-button');
 
 // etc...
 ```
@@ -273,6 +273,7 @@ pest()->browser()->userAgent('CustomUserAgent');
 [attribute](#attribute)
 [keys](#keys)
 [type](#type)
+[typeSlowly](#type-slowly)
 [select](#select)
 [append](#append)
 [clear](#clear)
@@ -286,6 +287,8 @@ pest()->browser()->userAgent('CustomUserAgent');
 [hover](#hover)
 [submit](#submit)
 [value](#value)
+[withinIframe](#within-iframe)
+[resize](#resize)
 [script](#script)
 [content](#content)
 [url](#url)
@@ -300,6 +303,7 @@ pest()->browser()->userAgent('CustomUserAgent');
 
 [debug](#debug)
 [screenshot](#screenshot)
+[screenshotElement](#screenshot-element)
 [tinker](#tinker)
 [headed](#headed)
 
@@ -874,6 +878,12 @@ The `click` method clicks the link with the given text:
 $page->click('Login');
 ```
 
+You may also pass options:
+
+```php
+$page->click('#button', options: ['clickCount' => 2]);
+```
+
 <a name="text"></a>
 ### text
 
@@ -909,6 +919,16 @@ The `type` method types the given value in the given field:
 
 ```php
 $page->type('email', 'test@example.com');
+```
+
+<a name="type-slowly"></a>
+
+### typeSlowly
+
+The `typeSlowly` method types the given value in the given field slowly, like a user:
+
+```php
+$page->typeSlowly('email', 'test@example.com');
 ```
 
 <a name="select"></a>
@@ -1031,6 +1051,31 @@ The `value` method gets the value of the element matching the given selector:
 $value = $page->value('input[name=email]');
 ```
 
+<a name="with-in-iframe"></a>
+
+### withinIframe
+
+The `withinIframe` method allows you to interact with elements inside an iframe:
+
+```php
+use Pest\Browser\Api\PendingAwaitablePage;
+
+$page->withinIframe('.iframe-container', function (PendingAwaitablePage $page) {
+    $page->type('frame-input', 'Hello iframe')
+        ->click('frame-button');
+});
+```
+
+<a name="resize"></a>
+
+### resize
+
+You may use the resize method to adjust the size of the browser window:
+
+```php
+$page->resize(1280, 720);
+```
+
 <a name="script"></a>
 ### script
 
@@ -1094,10 +1139,19 @@ $page->debug();
 <a name="screenshot"></a>
 You can also take a screenshot of the current page using the `screenshot()` method. This is useful for visual debugging:
 
+NOTE: If you don't pass the filename, it will use the test name as the filename.
+
 ```php
 $page->screenshot();
 $page->screenshot(fullPage: true);
 $page->screenshot(filename: 'custom-name');
+```
+
+<a name="screenshotElement"></a>
+You can also take a screenshot of a specific element using the `screenshotElement()` method:
+
+```php
+$page->screenshotElement('#my-element');
 ```
 
 <a name="tinker"></a>
