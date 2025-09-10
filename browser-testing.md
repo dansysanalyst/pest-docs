@@ -284,7 +284,6 @@ pest()->browser()->timeout(10);
 [url](#url)
 [wait](#wait)
 [waitForKey](#wait-for-key)
-[waitForSelector](#wait-for-selector)
 
 </div>
 
