@@ -284,7 +284,6 @@ pest()->browser()->timeout(10);
 [url](#url)
 [wait](#wait)
 [waitForKey](#wait-for-key)
-[waitForURL](#wait-for-url)
 [waitForSelector](#wait-for-selector)
 
 </div>
@@ -1051,7 +1050,9 @@ $value = $page->value('input[name=email]');
 The `withinIframe` method allows you to interact with elements inside an iframe:
 
 ```php
-$page->withinIframe('.iframe-container', function (WebPage $page) {
+use Pest\Browser\Api\AwaitableWebpage;
+
+$page->withinIframe('.iframe-container', function (AwaitableWebpage $page) {
     $page->type('frame-input', 'Hello iframe');
     $page->click('frame-button');
 });
@@ -1110,32 +1111,6 @@ The `waitForKey` method opens the current page URL in the default web browser an
 
 ```php
 $page->waitForKey(); // Useful for debugging
-```
-
-<a name="wait-for-url"></a>
-### waitForURL
-
-The `waitForURL` method waits for the page to navigate to the given URL:
-
-```php
-$page->waitForURL('/page-b');
-```
-
-<a name="wait-for-selector"></a>
-### waitForSelector
-
-The `waitForSelector` method waits for the selector to satisfy state option (either appear/disappear from dom, or become visible/hidden)
-
-```php
-$page->waitForSelector('.my-selector');
-```
-
-You may also pass options:
-
-```php
-$page->waitForSelector('.my-selector', [
-    'state' => 'detached',
-]);
 ```
 
 ## Debugging tests
