@@ -193,7 +193,7 @@ it('does not run on CI', function () {
 ### Miscellaneous Improvements
 
 - You may now use `skipLocally()` or `skipOnCi` to conditionally skip tests based on the environment.
-- The `not->toHaveSuspiciousCharacters()` arch expectation has been added to help you identify potential suspicious characters in your code. This arch expectation is now enabled by default on the `php` arch preset.
+- The `not->toHaveSuspiciousCharacters()` arch expectation has been added to help you identify potential suspicious characters in your code. This arch expectation is now enabled by default on the `php` arch preset. This expectation requires the `intl` PHP extension.
 - The expectation `toBeSlug` has been added to help you validate that a string is a valid slug.
 
 ### On Top of PHPUnit 12
