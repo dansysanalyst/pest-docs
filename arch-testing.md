@@ -78,6 +78,7 @@ Granular expectations allow you to define specific architectural rules for your 
 - [`toHavePublicMethods()`](#expect-toHavePublicMethods)
 - [`toHavePrefix()`](#expect-toHavePrefix)
 - [`toHaveSuffix()`](#expect-toHaveSuffix)
+- [`toHaveSuspiciousCharacters()`](#expect-toHaveSuspiciousCharacters)
 - [`toHaveConstructor()`](#expect-toHaveConstructor)
 - [`toHaveDestructor()`](#expect-toHaveDestructor)
 - [`toOnlyImplement()`](#expect-toOnlyImplement)
@@ -458,6 +459,19 @@ arch('app')
     ->toHaveSuffix('Controller');
 ```
 
+<a name="expect-toHaveSuspiciousCharacters"></a>
+### `toHaveSuspiciousCharacters()`
+
+The `toHaveSuspiciousCharacters()` method may be used to help you identify potential suspicious characters in your code.
+
+```php
+arch('app')
+    ->expect('App\Http\Controllers')
+    ->not->toHaveSuspiciousCharacters();
+```
+
+This expectation requires the `intl` PHP extension.
+
 <a name="expect-toHaveConstructor"></a>
 ### `toHaveConstructor()`
 
@@ -619,7 +633,9 @@ It avoids the usage of `die`, `var_dump`, and similar functions, and ensures you
 arch()->preset()->php();
 ```
 
-You may find all the expectations included in the `php` preset below in our [source code](https://github.com/pestphp/pest/blob/3.x/src/ArchPresets/Php.php).
+You may find all the expectations included in the `php` preset below in our [source code](https://github.com/pestphp/pest/blob/4.x/src/ArchPresets/Php.php).
+
+This preset requires the `intl` PHP extension.
 
 <a name="preset-security"></a>
 ### `security`
