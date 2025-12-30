@@ -104,12 +104,12 @@ During development, you may want to focus on running specific tests while exclud
 
 #### Running Only Tests in a File
 
-When working on a specific feature, you can mark all tests in a file to run exclusively by calling the `only()` function at the top of your test file:
+When working on a specific feature, you can mark all tests in a file to run exclusively by calling the `pest()->only()` function at the top of your test file:
 
 ```php
 <?php
 
-only();
+pest()->only();
 
 test('first test', function () {
     // This will run
@@ -120,7 +120,7 @@ test('second test', function () {
 });
 ```
 
-All tests in files with `only()` will run, while tests in other files will be skipped.
+All tests in files with `pest()->only()` will run, while tests in other files will be skipped.
 
 #### Running a Single Test
 
