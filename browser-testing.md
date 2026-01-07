@@ -196,6 +196,16 @@ You may wish to override the User Agent of the browser for all of your tests, yo
 pest()->browser()->userAgent('CustomUserAgent');
 ```
 
+### Configuring Host
+
+By default, the server will bind to `127.0.0.1` for all browser tests.
+
+You may wish to override the host for subdomain applications. You can configure this in the `Pest.php` configuration file:
+
+```php
+pest()->browser()->withHost('some-subdomain.localhost');
+```
+
 ### Geolocation
 
 Sometimes, you need to define where the browser believes it is physically on the earth.  This method takes a latitude and longitude and will set the `geolocation` permission in the browser and then make the coordinates available via Javascript's getCurrentPosition API:
@@ -232,6 +242,16 @@ You can set the User-Agent header for your test requests using the `withUserAgen
 $page = visit('/')->withUserAgent('Googlebot');
 
 $page->assertSee('Welcome, bot!');
+```
+
+### Configuring Host
+
+You can set the host for your test server using the `withHost` method. This is useful for testing subdomains or where different hosts serve different content.
+
+```php
+$page = visit('/dashboard')->withHost('some-subdomain.localhost');
+
+$page->assertSee('Welcome to Some Subdomain');
 ```
 
 ## Table of Contents
