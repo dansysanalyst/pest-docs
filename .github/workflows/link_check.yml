@@ -11,10 +11,10 @@ jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Restore lychee cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .lycheecache
           key: cache-lychee-${{ github.sha }}
@@ -24,4 +24,4 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           jobSummary: true
-          args: --base . --cache --max-cache-age 1d --config .github/workflows/lychee.toml './**/*.md'
+          args: --base-url "$(pwd)" --cache --max-cache-age 1d --config .github/workflows/lychee.toml './**/*.md'
