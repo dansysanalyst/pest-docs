@@ -655,7 +655,7 @@ You may find all the expectations included in the `security` preset below in our
 
 The `laravel` preset is a predefined set of expectations that can be used on [Laravel](https://laravel.com) projects.
 
-It ensures you project's structure is following the well-known Laravel conventions, such as controllers only have `index`, `show`, `create`, `store`, `edit`, `update`, `destroy` as public methods and are always suffixed with `Controller` and so on.
+It ensures your project's structure is following the well-known Laravel conventions, such as controllers only having `index`, `show`, `create`, `store`, `edit`, `update`, `destroy` as public methods and are always suffixed with `Controller` and so on.
 
 ```php
 arch()->preset()->laravel();
