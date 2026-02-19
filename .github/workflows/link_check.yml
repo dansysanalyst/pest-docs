@@ -24,4 +24,4 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           jobSummary: true
-          args: --cache --max-cache-age 1d --config .github/workflows/lychee.toml './**/*.md'
+          args: --base-url https://pestphp.test --cache --max-cache-age 1d --config .github/workflows/lychee.toml './**/*.md'
